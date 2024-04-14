@@ -13,7 +13,6 @@ defmodule Rumbl.Multimedia.Video do
     timestamps()
   end
 
-  @doc false
   def changeset(video, attrs) do
     video
     |> cast(attrs, [:url, :title, :description, :category_id])

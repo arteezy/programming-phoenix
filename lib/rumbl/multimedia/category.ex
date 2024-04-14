@@ -1,6 +1,7 @@
 defmodule Rumbl.Multimedia.Category do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
 
   schema "categories" do
     field :name, :string
@@ -8,7 +9,10 @@ defmodule Rumbl.Multimedia.Category do
     timestamps()
   end
 
-  @doc false
+  def alphabetical(query) do
+    from c in query, order_by: c.name
+  end
+
   def changeset(category, attrs) do
     category
     |> cast(attrs, [:name])
