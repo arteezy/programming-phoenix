@@ -33,3 +33,5 @@ config :os_mon,
   start_cpu_sup: false,
   start_disksup: false,
   start_memsup: false
+
+config :pbkdf2_elixir, :rounds, 1
