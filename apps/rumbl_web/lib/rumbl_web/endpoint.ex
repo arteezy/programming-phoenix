@@ -6,11 +6,13 @@ defmodule RumblWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_rumbl_web_key",
-    signing_salt: "G9Vh8HQf"
+    key: "_rumbl_key",
+    signing_salt: "bK1hQupZ"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+
+  socket "/socket", RumblWeb.UserSocket, websocket: true, longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #
