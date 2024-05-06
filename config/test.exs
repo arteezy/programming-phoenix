@@ -21,7 +21,7 @@ config :rumbl_web, RumblWeb.Endpoint,
   server: false
 
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :warning
 
 # In test we don't send emails.
 config :rumbl, Rumbl.Mailer, adapter: Swoosh.Adapters.Test
