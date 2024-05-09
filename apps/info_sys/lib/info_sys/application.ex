@@ -4,9 +4,8 @@ defmodule InfoSys.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      Supervisor.child_spec({InfoSys.Counter, 15}, id: :long),
-      Supervisor.child_spec({InfoSys.Counter, 5}, id: :short),
-      Supervisor.child_spec({InfoSys.Counter, 10}, id: :medium)
+      InfoSys.Cache,
+      {Task.Supervisor, name: InfoSys.TaskSupervisor}
     ]
 
     opts = [strategy: :one_for_one, name: InfoSys.Supervisor]
