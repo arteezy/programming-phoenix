@@ -7,7 +7,7 @@ defmodule InfoSys.Wolfram do
   @base "http://api.wolframalpha.com/v2/query"
 
   @impl true
-  def name, do: "wolfram"
+  def name, do: "Wolfram"
 
   @impl true
   def compute(query_str, _opts) do
