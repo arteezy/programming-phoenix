@@ -4,7 +4,7 @@ defmodule InfoSys.Wolfram do
 
   @behaviour InfoSys.Backend
 
-  @http Application.get_env(:info_sys, :wolfram)[:http_client] || :httpc
+  @http Application.compile_env(:info_sys, :wolfram)[:http_client] || :httpc
 
   @base "http://api.wolframalpha.com/v2/query"
 
