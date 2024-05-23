@@ -15,23 +15,22 @@ config :rumbl, Rumbl.Repo,
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :rumbl, RumblWeb.Endpoint,
+config :rumbl_web, RumblWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "XsDjT3A+ZnB4Uj83LkSXHCkR5K2wT8ZAObrBPJc/b7v6tSebmaeMJqBr4rdGz8Kc",
+  secret_key_base: "zleLDayH8sMVFjtV0cQKJB0hm604XGL/bghdIdh8mHRNEtPbw9fkFlDHcVawTnQo",
   server: false
-
-# In test we don't send emails.
-config :rumbl, Rumbl.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warning
 
+# In test we don't send emails.
+config :rumbl, Rumbl.Mailer, adapter: Swoosh.Adapters.Test
+
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
 
-config :os_mon,
-  start_cpu_sup: false,
-  start_disksup: false,
-  start_memsup: false
-
 config :pbkdf2_elixir, :rounds, 1
+
+config :info_sys, :wolfram,
+  app_id: "1234",
+  http_client: InfoSys.Test.HTTPClient
