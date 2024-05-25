@@ -92,7 +92,6 @@ defmodule RumblWeb do
       use Phoenix.HTML
 
       # Import basic rendering functionality (render, render_layout, etc)
-      import Phoenix.View
       import Phoenix.Component
 
       import RumblWeb.ErrorHelpers
