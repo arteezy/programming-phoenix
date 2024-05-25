@@ -41,7 +41,7 @@ defmodule RumblWeb.Channels.VideoChannelTest do
 
   test "new annotations triggers InfoSys", %{socket: socket, video: vid} do
     insert_user(
-      username: "wolfram",
+      username: "Wolfram",
       password: "supersecret"
     )
 
